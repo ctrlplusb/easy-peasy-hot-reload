@@ -6,8 +6,7 @@ const store = createStore(model);
 if (process.env.NODE_ENV === "development") {
   if (module.hot) {
     module.hot.accept("./model", () => {
-      const newModel = require("./model").default;
-      store.reconfigure(newModel); // 👈 Here is the magic
+      store.reconfigure(model); // 👈 Here is the magic
     });
   }
 }
